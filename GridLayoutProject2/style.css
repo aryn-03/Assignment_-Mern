@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ecf2f8; /* Light blue-gray background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* --- Grid Layout --- */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1110px;
+  width: 100%;
+}
+
+/* Positioning specific cards in the grid */
+.card--daniel { grid-column: 1 / 3; }
+.card--jonathan { grid-column: 3 / 4; }
+.card--kira { grid-column: 4 / 5; grid-row: 1 / 3; }
+.card--jeanette { grid-column: 1 / 2; }
+.card--patrick { grid-column: 2 / 4; }
+
+/* --- Card Styles --- */
+.card {
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1;
+}
+
+/* Color Themes */
+.card--purple {
+  background-color: #733fc8;
+  color: white;
+}
+
+/* Adding the large quote mark to Daniel's card */
+.card--daniel::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  right: 40px;
+  font-size: 150px;
+  font-family: serif;
+  color: #a775f1;
+  opacity: 0.5;
+  line-height: 1;
+  z-index: -1;
+}
+
+.card--dark-gray {
+  background-color: #48556a;
+  color: white;
+}
+
+.card--black {
+  background-color: #19212e;
+  color: white;
+}
+
+.card--white {
+  background-color: white;
+  color: #48556a;
+}
+
+/* --- Header & Typography --- */
+.card__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.card__img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.border-purple {
+  border: 2px solid #a775f1;
+}
+
+.card__name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.card__status {
+  font-size: 0.75rem;
+  opacity: 0.5;
+  margin-top: 2px;
+}
+
+.card__lead {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.card__quote {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 900px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card--daniel,
+  .card--jonathan,
+  .card--kira,
+  .card--jeanette,
+  .card--patrick {
+    grid-column: 1 / 2;
+    grid-row: auto;
+  }
+}

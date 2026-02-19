@@ -1,0 +1,311 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Main Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 360px); /* Fixed height for uniformity */
+    gap: 1px; /* Creates the thin internal borders */
+    background-color: #e0e0e0; /* Color of the borders */
+    width: 100%;
+    max-width: 1200px;
+    border: 2px solid #222; /* Thick outer border */
+}
+
+/* Generic Grid Item */
+.grid-item {
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typography Styles */
+h2.serif-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: normal;
+    color: #333;
+}
+
+.sub-tag {
+    font-size: 10px;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+a.text-link {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #51b1ad;
+    margin-top: auto;
+}
+
+a.text-link.yellow { color: #f9ce54; }
+
+/* --- Individual Block Styling --- */
+
+/* 1. Top Left: iPhone Text */
+.item-iphone {
+    padding: 50px 40px;
+    justify-content: center;
+}
+.item-iphone .serif-title {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+.item-iphone p {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.5;
+}
+
+/* 2. Top Mid: Phone Image */
+.item-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+.item-phone img {
+    max-width: 90%;
+    max-height: 110%; /* Allow it to scale nicely */
+    object-fit: contain;
+}
+
+/* 3. Top Right: Rotary Evaporator */
+.item-rotary {
+    grid-column: 3 / 5;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px;
+    background-color: #fcfcfc;
+}
+.item-rotary .serif-title {
+    font-size: 34px;
+    margin-bottom: 30px;
+    max-width: 80%;
+}
+
+/* 4. Mid Left: Keyboard */
+.item-keyboard {
+    background-color: #f0543c;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+.item-keyboard img {
+    max-width: 85%;
+    margin-bottom: 20px;
+}
+.item-keyboard h3 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+/* 5. Center Mid: iMac Text & Image */
+.item-imac {
+    grid-column: 2 / 4;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.imac-text-left {
+    width: 45%;
+    z-index: 2;
+}
+.imac-text-left .serif-title {
+    font-size: 24px;
+    line-height: 1.4;
+}
+.imac-text-right {
+    width: 45%;
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+    z-index: 2;
+}
+.imac-text-right a {
+    display: inline-block;
+    margin-top: 20px;
+}
+.item-imac img {
+    position: absolute;
+    bottom: 0;
+    left: -180px;
+    width: 380px;
+    z-index: 1;
+}
+
+/* 6. Right Mid to Bottom: iCloud (Spans 2 rows) */
+.item-icloud {
+    grid-column: 4 / 5;
+    grid-row: 2 / 4;
+    background-color: #7d5eac;
+    color: white;
+    align-items: center;
+    text-align: center;
+    padding: 50px 30px;
+}
+.icloud-circle {
+    background-color: #694b94;
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+.icloud-circle img {
+    width: 140px;
+    z-index: 2;
+}
+.popular-flag {
+    position: absolute;
+    top: 25px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.item-icloud .sub-tag { color: white; margin-bottom: 5px; }
+.item-icloud h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+.item-icloud p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.btn-yellow {
+    background-color: #f9ce54;
+    color: #000;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* 7. Bottom Left: Controller */
+.item-controller {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+.item-controller img {
+    max-width: 60%;
+    margin-bottom: 25px;
+}
+.item-controller h3 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* 8. Bottom Mid: Laptop */
+.item-laptop {
+    grid-column: 2 / 4;
+    background-color: #84aba9;
+    color: white;
+    align-items: center;
+    padding-top: 50px;
+}
+.badge-best-choice {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: #f0543c;
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+.item-laptop h2 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: normal;
+    z-index: 2;
+}
+.item-laptop img {
+    position: absolute;
+    bottom: -30px;
+    width: 75%;
+    z-index: 2;
+}
+.bg-watermark {
+    position: absolute;
+    font-size: 180px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .grid-item {
+        grid-column: 1 / -1 !important;
+        grid-row: auto !important;
+        min-height: 350px;
+    }
+    .item-icloud {
+        padding: 50px 20px;
+    }
+    .item-imac {
+        flex-direction: column;
+    }
+    .imac-text-left, .imac-text-right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .item-imac img {
+        position: relative;
+        left: 0;
+    }
+}
